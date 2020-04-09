@@ -9,12 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		// Do any additional setup after loading the view.
+	
+	private(set) var volume = 0
+	
+	func setVolume(value: Int) {
+		volume = min(max(volume, 0), 100)
 	}
-
-
+	
+	func charactersCampare(sringOne: String, stringTwo: String) -> Bool {
+		return Set(sringOne) == Set(stringTwo)
+	}
 }
 
